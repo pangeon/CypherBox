@@ -1,10 +1,11 @@
 package pl.cecherz.utils.polish;
 
+import pl.cecherz.utils.Dictionary;
 import pl.cecherz.utils.TextUtils;
 
-public class PolishTextUtils extends TextUtils {
+public class PolishTextUtils extends TextUtils implements Dictionary {
 
-    public static int[] textToDigit(char[] lettersTable) {
+    public int[] textToDigit(char[] lettersTable) {
         int[] lettersDigits = new int[lettersTable.length];
         for (int i = 0; i < lettersDigits.length; i++) {
             switch (lettersTable[i]) {
@@ -47,7 +48,7 @@ public class PolishTextUtils extends TextUtils {
         }
         return lettersDigits;
     }
-    public static char[] digitToText(int[] intTable) {
+    public char[] digitToText(int[] intTable) {
         char[] lettersTable = new char[intTable.length];
         for (int i = 0; i < intTable.length; i++) {
             switch (intTable[i]) {
