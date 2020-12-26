@@ -1,6 +1,7 @@
 package pl.cecherz;
 
 import pl.cecherz.encryption_methods.CaesarCipher;
+import pl.cecherz.generators.PasswordCreator;
 import pl.cecherz.utils.latin.LatinTextUtils;
 import pl.cecherz.utils.polish.PolishTextUtils;
 
@@ -16,9 +17,10 @@ public class Start {
         String messageToEncrypt;
         String messageToDecrypt;
         int movement;
+        int passwordLength;
 
         while (!(command.equals("exit"))) {
-            System.out.println("Set your command: exit, encrypt, decrypt");
+            System.out.println("Set your command: exit, encrypt, decrypt, gen pass");
             command = userInterface.nextLine();
             switch (command) {
                 case "encrypt" -> {
@@ -51,9 +53,14 @@ public class Start {
                         case "latin" -> decrypt(messageToDecrypt, "latin", movement);
                     }
                 }
-                case "exit" -> {
+                case "gen pass" -> {
+                    System.out.println("Welcome in password generator.");
+                    System.out.println("Define your password size:");
+                    passwordLength = userInterface.nextInt();
+                    System.out.println("Your secret key: " +
+                            new PasswordCreator().getPassword(passwordLength)
+                    + " write it in safety place.");
                 }
-                default -> System.out.println("Available command: exit, encrypt, decrypt");
             }
         }
         close("Program has closed.");
