@@ -27,5 +27,11 @@ Protect your identity. Small helpful tools for advanced users.
 
 5) Select **File** -> **Invalidate Cache / Restart** 
 
+## Utils
+
+#### Maven and JUnit
+1) Click right click on project name and choose **Add Framework Support** -> **Maven**
+2) Build **pom.xml** using archetype **maven-archetype-quickstart** [DOC](https://maven.apache.org/guides/getting-started/#how-do-i-make-my-first-maven-project)
+
 ## Author
 * Kamil Cecherz as [pangeon](https://github.com/pangeon)
