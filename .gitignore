@@ -1,3 +1,6 @@
+.idea/
+out/
+CypherBox.iml
 # Compiled class file
 *.class
 
