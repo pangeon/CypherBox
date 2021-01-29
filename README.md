@@ -33,5 +33,20 @@ Protect your identity. Small helpful tools for advanced users.
 1) Click right click on project name and choose **Add Framework Support** -> **Maven**
 2) Build **pom.xml** using archetype **maven-archetype-quickstart** [DOC](https://maven.apache.org/guides/getting-started/#how-do-i-make-my-first-maven-project)
 
+#### Mockito
+
+1) You must visit site: [search.maven.org](https://search.maven.org/artifact/org.mockito/mockito-core)
+2) Copy content from **Apache Maven** in grey checkbox:
+
+```xml
+<dependency>
+  <groupId>org.mockito</groupId>
+  <artifactId>mockito-core</artifactId>
+  <version>3.7.7</version>
+</dependency>
+```
+
+3) Reload **Maven** dependencies
+
 ## Author
 * Kamil Cecherz as [pangeon](https://github.com/pangeon)

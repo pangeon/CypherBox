@@ -1,7 +1,8 @@
 package pl.cecherz.encryption_methods;
 
 import org.junit.*;
-import pl.cecherz.generators.PasswordCreatorTest;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import pl.cecherz.utils.TextUtils;
 import pl.cecherz.utils.latin.LatinTextUtils;
 
@@ -45,6 +46,13 @@ public class CaesarCypherTest {
         caesarCypher.changePosition(cypherDigits, 3);
         int[] encryptCypherDigits = {10, 7, 14, 14, 17, 5, 17, 6, 7};
         Assert.assertArrayEquals(cypherDigits, encryptCypherDigits);
+    }
+    @Test
+    @Ignore("Method not implemented yet")
+    public void givenDecryptMessageLatinDictWhenCypherDigits() {
+        int[] encryptCypherDigits = {10, 7, 14, 14, 17, 5, 17, 6, 7};
+//        Mockito.when(caesarCypher.rewindPosition(encryptCypherDigits,3))
+//                .then(cypherDigits);
     }
     @Test (expected = ArithmeticException.class)
     public void givenEncryptMessageLatinDictWithParamZeroWhenMovThreeThenCatchException() {
