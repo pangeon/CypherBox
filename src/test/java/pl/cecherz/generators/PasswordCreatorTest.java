@@ -1,17 +1,34 @@
 package pl.cecherz.generators;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.*;
 import pl.cecherz.utils.TextUtils;
 
 import java.util.Arrays;
+import java.util.Date;
 
 public class PasswordCreatorTest {
 
+    private static PasswordCreator passwordCreator;
+
+    private static Date timestamp;
+    private static long beforeTime;
+    private static long afterTime;
+
+    @BeforeClass
+    public static void init() {
+        PasswordCreatorTest.passwordCreator = new PasswordCreator();
+        PasswordCreatorTest.timestamp = new Date();
+        PasswordCreatorTest.beforeTime = timestamp.getTime();
+    }
+    @AfterClass
+    public static void release() {
+        PasswordCreatorTest.timestamp = new Date();
+        PasswordCreatorTest.afterTime = timestamp.getTime();
+        System.out.println(PasswordCreatorTest.class + " execution time: " + (afterTime - beforeTime) + " ms");
+    }
     @Test
     public void checkLengthPasswordWhenUsePasswordCreator() {
-        PasswordCreator passwordCreator = new PasswordCreator();
-        String[] randomPassword = new String[100];
+        String[] randomPassword = new String[10];
         for(int i = 0; i < randomPassword.length; i++) {
             randomPassword[i] = passwordCreator.getPassword(i);
             System.out.println(i + " " + randomPassword[i]);
@@ -20,13 +37,11 @@ public class PasswordCreatorTest {
     }
     @Test
     public void showSignsInRandomPassword() {
-        PasswordCreator passwordCreator = new PasswordCreator();
         char[] signsRandomPassword = TextUtils.explode(passwordCreator.getPassword(20));
         System.out.println(Arrays.toString(signsRandomPassword));
     }
     @Test
     public void matchRandomPasswordToPattern() {
-        PasswordCreator passwordCreator = new PasswordCreator();
         char[] signsRandomPassword = TextUtils.explode(passwordCreator.getPassword(100));
         char[] allSignsInGenerator = passwordCreator.getSignsTable();
         for (char signPass : signsRandomPassword)

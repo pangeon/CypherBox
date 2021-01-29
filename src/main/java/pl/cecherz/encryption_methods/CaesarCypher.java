@@ -2,10 +2,13 @@ package pl.cecherz.encryption_methods;
 
 public class CaesarCypher {
 
-    private final int dictionaryLength;
+    private int dictionaryLength;
 
     public int getDictionaryLength() {
         return dictionaryLength;
+    }
+    public void setDictionaryLength(int dictionaryLength) {
+        this.dictionaryLength = dictionaryLength;
     }
     public CaesarCypher(int dictionaryLength) {
         this.dictionaryLength = dictionaryLength;
