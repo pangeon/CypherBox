@@ -1,8 +1,6 @@
 package pl.cecherz.encryption_methods;
 
 import org.junit.*;
-import org.mockito.Mock;
-import org.mockito.Mockito;
 import pl.cecherz.utils.TextUtils;
 import pl.cecherz.utils.latin.LatinTextUtils;
 
@@ -39,20 +37,12 @@ public class CaesarCypherTest {
         CaesarCypherTest.afterTime = timestamp.getTime();
         System.out.println(CaesarCypherTest.class + " execution time: " + (afterTime - beforeTime) + " ms");
     }
-
     @Test
     public void givenEncryptMessageLatinDictWhenMovThreeThenMatchTables() {
         caesarCypher.setDictionaryLength(26);
         caesarCypher.changePosition(cypherDigits, 3);
         int[] encryptCypherDigits = {10, 7, 14, 14, 17, 5, 17, 6, 7};
         Assert.assertArrayEquals(cypherDigits, encryptCypherDigits);
-    }
-    @Test
-    @Ignore("Method not implemented yet")
-    public void givenDecryptMessageLatinDictWhenCypherDigits() {
-        int[] encryptCypherDigits = {10, 7, 14, 14, 17, 5, 17, 6, 7};
-//        Mockito.when(caesarCypher.rewindPosition(encryptCypherDigits,3))
-//                .then(cypherDigits);
     }
     @Test (expected = ArithmeticException.class)
     public void givenEncryptMessageLatinDictWithParamZeroWhenMovThreeThenCatchException() {
@@ -65,3 +55,6 @@ public class CaesarCypherTest {
         assertEquals(1, 1);
     }
 }
+
+
+
