@@ -1,5 +1,6 @@
 .idea/
 out/
+target/
 CypherBox.iml
 # Compiled class file
 *.class

@@ -1,6 +1,7 @@
 package pl.cecherz;
 
 import pl.cecherz.encryption_methods.CaesarCipher;
+import pl.cecherz.generators.NotRestrictPasswordException;
 import pl.cecherz.generators.PasswordCreator;
 import pl.cecherz.utils.latin.LatinTextUtils;
 import pl.cecherz.utils.polish.PolishTextUtils;
@@ -57,9 +58,14 @@ public class Start {
                     System.out.println("Welcome in password generator.");
                     System.out.println("Define your password size:");
                     passwordLength = userInterface.nextInt();
-                    System.out.println("Your secret key: " +
-                            new PasswordCreator().getPassword(passwordLength)
-                    + " write it in safety place.");
+                    try {
+                        System.out.println("Your secret key: " +
+                                new PasswordCreator().getRestrictPassword(passwordLength)
+                                + " write it in safety place.");
+                    } catch(NotRestrictPasswordException e) {
+                        e.printStackTrace();
+                        e.printCause();
+                    }
                 }
             }
         }
