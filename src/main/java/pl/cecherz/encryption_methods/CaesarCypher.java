@@ -1,13 +1,16 @@
 package pl.cecherz.encryption_methods;
 
-public class CaesarCipher {
+public class CaesarCypher {
 
-    private final int dictionaryLength;
+    private int dictionaryLength;
 
     public int getDictionaryLength() {
         return dictionaryLength;
     }
-    public CaesarCipher(int dictionaryLength) {
+    public void setDictionaryLength(int dictionaryLength) {
+        this.dictionaryLength = dictionaryLength;
+    }
+    public CaesarCypher(int dictionaryLength) {
         this.dictionaryLength = dictionaryLength;
     }
     public void changePosition(int[] digits, int position) {

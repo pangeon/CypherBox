@@ -14,11 +14,11 @@ public class PasswordCreator {
         }
         throw new NotRestrictPasswordException();
     }
-    private char[] getSignsTable() {
+    public char[] getSignsTable() {
         String signs = " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
         return TextUtils.explode(signs);
     }
-    private String getRandomPassword(int size) {
+    public String getRandomPassword(int size) {
         char[] password = new char[size];
         for (int i = 0; i < size; i++) {
             password[i] = getSignsTable()[(int) (Math.random() * 95)];

@@ -1,7 +1,7 @@
 package pl.cecherz;
 
-import pl.cecherz.encryption_methods.CaesarCipher;
 import pl.cecherz.generators.NotRestrictPasswordException;
+import pl.cecherz.encryption_methods.CaesarCypher;
 import pl.cecherz.generators.PasswordCreator;
 import pl.cecherz.utils.latin.LatinTextUtils;
 import pl.cecherz.utils.polish.PolishTextUtils;
@@ -83,14 +83,14 @@ public class Start {
             case "latin" -> {
                 decrypted_letters = LatinTextUtils.explode(messageToEncrypt);
                 decrypted_digits = latinLangDictionary.textToDigit(decrypted_letters);
-                new CaesarCipher(26).changePosition(decrypted_digits, position);
+                new CaesarCypher(26).changePosition(decrypted_digits, position);
                 cypher = LatinTextUtils.concat(latinLangDictionary.digitToText(decrypted_digits));
                 System.out.println(cypher);
             }
             case "polish" -> {
                 decrypted_letters = PolishTextUtils.explode(messageToEncrypt);
                 decrypted_digits = polishLangDictionary.textToDigit(decrypted_letters);
-                new CaesarCipher(35).changePosition(decrypted_digits, position);
+                new CaesarCypher(35).changePosition(decrypted_digits, position);
                 cypher = LatinTextUtils.concat(polishLangDictionary.digitToText(decrypted_digits));
                 System.out.println(cypher);
             }
@@ -108,14 +108,14 @@ public class Start {
             case "latin" -> {
                 encrypted_letters = LatinTextUtils.explode(messageToEncrypt);
                 encrypted_digits = latinLangDictionary.textToDigit(encrypted_letters);
-                new CaesarCipher(26).rewindPosition(encrypted_digits, position);
+                new CaesarCypher(26).rewindPosition(encrypted_digits, position);
                 cypher = LatinTextUtils.concat(latinLangDictionary.digitToText(encrypted_digits));
                 System.out.println(cypher);
             }
             case "polish" -> {
                 encrypted_letters = PolishTextUtils.explode(messageToEncrypt);
                 encrypted_digits = polishLangDictionary.textToDigit(encrypted_letters);
-                new CaesarCipher(35).rewindPosition(encrypted_digits, position);
+                new CaesarCypher(35).rewindPosition(encrypted_digits, position);
                 cypher = LatinTextUtils.concat(polishLangDictionary.digitToText(encrypted_digits));
                 System.out.println(cypher);
             }
