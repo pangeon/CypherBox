@@ -29,14 +29,30 @@ Protect your identity. Small helpful tools for advanced users.
 
 ## Utils
 
-#### Maven and JUnit
+### Maven and JUnit
 1) Click right click on project name and choose **Add Framework Support** -> **Maven**
 2) Build **pom.xml** using archetype **maven-archetype-quickstart** [DOC](https://maven.apache.org/guides/getting-started/#how-do-i-make-my-first-maven-project)
 
-#### Mockito
+### Additional dependencies
 
-1) You must visit site: [search.maven.org](https://search.maven.org/artifact/org.mockito/mockito-core)
-2) Copy content from **Apache Maven** in grey checkbox:
+Copy content from **Apache Maven** in grey checkbox and paste into **POM.XML** in your Maven project.
+
+#### JUnit 5
+- You must visit site: [junit-jupiter-engine](https://search.maven.org/artifact/org.junit.jupiter/junit-jupiter-engine)
+
+```xml
+<dependency>
+   <groupId>org.junit.jupiter</groupId>
+   <artifactId>junit-jupiter-engine</artifactId>
+   <version>5.7.0</version>
+   <scope>test</scope>
+</dependency>
+```
+
+- User Guide on [site junit.org](https://junit.org/junit5/docs/current/user-guide/)
+
+#### Mockito
+- You must visit site: [mockito-core](https://search.maven.org/artifact/org.mockito/mockito-core)
 
 ```xml
 <dependency>
@@ -46,7 +62,7 @@ Protect your identity. Small helpful tools for advanced users.
 </dependency>
 ```
 
-3) Reload **Maven** dependencies
+Reload **Maven** dependencies
 
 ## Author
 * Kamil Cecherz as [pangeon](https://github.com/pangeon)

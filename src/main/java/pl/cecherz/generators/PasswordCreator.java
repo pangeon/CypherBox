@@ -25,7 +25,7 @@ public class PasswordCreator {
         }
         return TextUtils.concat(password);
     }
-    private boolean isRestrictPassword(String password) {
+    public boolean isRestrictPassword(String password) {
         String regex = "^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).*$";
         Pattern pattern = Pattern.compile(regex);
         return pattern.matcher(password).matches();
